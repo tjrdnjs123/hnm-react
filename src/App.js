@@ -1,12 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Login from './page/Login';
-import ProductAll from './page/ProductAll';
-import ProductDetail from './page/ProductDetail';
-import Navbar from './component/Navbar';
-
-
+import Login from "./page/Login";
+import ProductAll from "./page/ProductAll";
+import ProductDetail from "./page/ProductDetail";
+import Navbar from "./component/Navbar";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
+import PrivateRoute from "./route/PrivateRoute";
 
 //1. 전체상품페이지, 로그인 , 상품상세페이지
 //2. 전체상품페이지는 전체 상품을 볼 수 있다.
@@ -18,22 +20,24 @@ import Navbar from './component/Navbar';
 //8. 로그인을 하면 로그아웃이 보이고 로그아웃을 하면 로그인이 보인다.
 //9. 상품을 검색할 수 있다
 
-
-
-
-
 function App() {
+  const [authenticate, setAuthenticate] = useState(false);
+  useEffect(() => {
+    console.log("aaA", authenticate);
+  }, [authenticate]);
   return (
     <div>
       <Navbar />
       <Routes>
-        <Route path="/" element={<ProductAll />} /> 
-        <Route path="/login" element={<Login />} />
-        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/" element={<ProductAll />} />
+        <Route
+          path="/login"
+          element={<Login setAuthenticate={setAuthenticate} />}
+        />
+        <Route path="/product/:id" element={<PrivateRoute  authenticate={authenticate}/>} />
       </Routes>
     </div>
   );
 }
-
 
 export default App;

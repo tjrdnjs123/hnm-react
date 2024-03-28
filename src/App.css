@@ -2,6 +2,7 @@
   display: flex;
   justify-content: flex-end;
   margin: 20px;
+  cursor: pointer;
 }
 
 .nav-section {
@@ -11,13 +12,12 @@
 
 .menu-area {
   display: flex;
-  justify-content: center;
 }
 
 .menu-list {
   display: flex;
   list-style-type: none;
-  margin-left: 370px; 
+  margin-left: 370px;
   margin-right: auto;
 }
 
@@ -27,25 +27,65 @@
 
 .search-container {
   margin-right: 20px;
-  border-bottom: 2px solid #444444;
-  padding-bottom: 10px;
+  margin-left: auto;
+  margin-bottom: 10px;
 }
 
-
-
-
-.search-container input[type="text"] {
-  color: #999; /* 회색으로 설정 */
-  opacity: 0.7; /* 희미하게 만듭니다. */
+#search-input {
+  background-color: #fff8dc;
+  border-width: 0 0 1px;
+  color: #999;
+  opacity: 0.7;
   width: 100px;
-  
 }
+
+.card {
+  align-items: center;
+}
+
+
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card h6 {
+  font-size: x-small;
+}
+
+.product-img-area{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.product-img{
+  width: 53%;
+}
+.product-text-area div{
+  margin: 15px;
+}
+
+.product-text-area h6{
+  font-size: x-small;
+}
+
+.size-select{
+  margin-left: 15px;
+}
+
+.add-btn{
+  width: 590px;
+  background-color: black;
+  color: white;
+}
+
+
 
 @media screen and (max-width: 768px) {
   .nav-section {
     display: none;
   }
-  .menu-area{
+  .menu-area {
     display: none;
   }
 }
