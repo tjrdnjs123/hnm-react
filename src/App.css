@@ -25,24 +25,22 @@
   padding: 10px;
 }
 
-.close-menu-toggle{
+.close-menu-toggle {
   display: flex;
   justify-content: flex-end;
-  
 }
 
-.drop-down-menu-area{
+.drop-down-menu-area {
   background-color: burlywood;
   width: 150px;
   margin-left: 30px;
 }
 .drop-down-menu-list {
   list-style-type: none;
-  
 }
 
 .drop-down-menu-list li {
-  padding:10px;
+  padding: 10px;
 }
 
 .search-container {
@@ -64,60 +62,57 @@
   cursor: pointer;
 }
 
-.logo-img{
+.logo-img {
   cursor: pointer;
 }
 
-.menu-toggle{
+.menu-toggle {
   cursor: pointer;
   margin-left: 30px;
-  
- 
-}
-
-
-.card:hover {
-  transform: scale(1.1);
 }
 
 .card h6 {
   font-size: x-small;
 }
 
-.product-img-area{
+.product-img-area {
   display: flex;
   justify-content: flex-end;
 }
 
-.product-img{
+.product-img {
   width: 53%;
 }
-.product-text-area div{
+.product-text-area div {
   margin: 15px;
 }
 
-.product-text-area h6{
+.product-text-area h6 {
   font-size: x-small;
 }
 
-.size-select{
+.size-select {
   margin-left: 15px;
 }
 
-.add-btn{
+.add-btn {
   width: 590px;
   background-color: black;
   color: white;
 }
 
-
-
-@media screen and (max-width: 768px) {
-  .nav-section {
-    display: none;
-  }
-  .menu-area {
-    display: none;
+@media (min-width: 768px) {
+  .card:hover {
+    transform: scale(1.1);
+    /* 데스크톱 화면에서 hover 효과 적용 */
   }
 }
 
+@media screen and (max-width: 768px) {
+  .menu-list {
+    display: none;
+  }
+  .card:active {
+    transform: scale(1.1);
+  }
+}
