@@ -60,6 +60,7 @@ const Navbar = ({ setAuthenticate, authenticate }) => {
           onClick={logoClick}
           width={100}
           src="https://blog.kakaocdn.net/dn/Yt80C/btqDeJAYUBo/JQbTuukRladq2AUOeqgiEK/img.jpg"
+          alt=""
         />
       </div>
       <div className="menu-toggle" onClick={toggleMenu}>
