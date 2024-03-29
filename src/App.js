@@ -27,7 +27,7 @@ function App() {
   }, [authenticate]);
   return (
     <div>
-      <Navbar />
+      <Navbar setAuthenticate={setAuthenticate} authenticate={authenticate}/>
       <Routes>
         <Route path="/" element={<ProductAll />} />
         <Route

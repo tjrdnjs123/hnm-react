@@ -25,6 +25,26 @@
   padding: 10px;
 }
 
+.close-menu-toggle{
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+.drop-down-menu-area{
+  background-color: burlywood;
+  width: 150px;
+  margin-left: 30px;
+}
+.drop-down-menu-list {
+  list-style-type: none;
+  
+}
+
+.drop-down-menu-list li {
+  padding:10px;
+}
+
 .search-container {
   margin-right: 20px;
   margin-left: auto;
@@ -41,8 +61,19 @@
 
 .card {
   align-items: center;
+  cursor: pointer;
 }
 
+.logo-img{
+  cursor: pointer;
+}
+
+.menu-toggle{
+  cursor: pointer;
+  margin-left: 30px;
+  
+ 
+}
 
 
 .card:hover {
@@ -89,3 +120,4 @@
     display: none;
   }
 }
+
