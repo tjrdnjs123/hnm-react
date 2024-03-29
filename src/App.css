@@ -12,17 +12,32 @@
 
 .menu-area {
   display: flex;
+  justify-content: center; 
 }
 
 .menu-list {
   display: flex;
   list-style-type: none;
-  margin-left: 370px;
-  margin-right: auto;
+
+
 }
 
 .menu-list li {
   padding: 10px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 100px;
+}
+
+#search-input {
+  background-color: #fff8dc;
+  border-width: 0 0 1px;
+  color: #999;
+  opacity: 0.7;
+  width: 100px;
 }
 
 .close-menu-toggle {
@@ -41,20 +56,6 @@
 
 .drop-down-menu-list li {
   padding: 10px;
-}
-
-.search-container {
-  margin-right: 20px;
-  margin-left: auto;
-  margin-bottom: 10px;
-}
-
-#search-input {
-  background-color: #fff8dc;
-  border-width: 0 0 1px;
-  color: #999;
-  opacity: 0.7;
-  width: 100px;
 }
 
 .card {
@@ -77,7 +78,7 @@
 
 .product-img-area {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .product-img {
@@ -96,7 +97,8 @@
 }
 
 .add-btn {
-  width: 590px;
+  width: 580px; /* 버튼 너비 자동 조절 */
+  max-width: 100%; /* 최대 너비 설정 */
   background-color: black;
   color: white;
 }
@@ -106,6 +108,9 @@
     transform: scale(1.1);
     /* 데스크톱 화면에서 hover 효과 적용 */
   }
+  .product-img-area {
+    justify-content: flex-end;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -114,5 +119,8 @@
   }
   .card:active {
     transform: scale(1.1);
+  }
+  .product-img-area {
+    justify-content: flex-start;
   }
 }

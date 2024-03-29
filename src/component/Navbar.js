@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faSearch , faTimes  } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -64,14 +64,14 @@ const Navbar = ({ setAuthenticate, authenticate }) => {
         />
       </div>
       <div className="menu-toggle" onClick={toggleMenu}>
-      <FontAwesomeIcon icon={faBars}  style={{ color:"burlywood" }}/>
+        <FontAwesomeIcon icon={faBars} style={{ color: "burlywood" }} />
       </div>
       {/* 햄버거 메뉴가 보여지는 부분 */}
       {isMenuOpen && (
         <div className="drop-down-menu-area">
           <div className="close-menu-toggle" onClick={closeMenu}>
-          <FontAwesomeIcon icon={faTimes} />
-        </div>
+            <FontAwesomeIcon icon={faTimes} />
+          </div>
           <ul className="drop-down-menu-list">
             {menuList.map((menu, index) => (
               <li key={index}>{menu}</li>
@@ -80,22 +80,22 @@ const Navbar = ({ setAuthenticate, authenticate }) => {
         </div>
       )}
 
+      <div className="search-container">
+        <FontAwesomeIcon icon={faSearch} />
+        <input
+          id="search-input"
+          type="text"
+          placeholder="제품검색"
+          onKeyPress={(event) => search(event)}
+        />
+      </div>
+
       <div className="menu-area">
         <ul className="menu-list">
           {menuList.map((menu, index) => (
             <li key={index}>{menu}</li>
           ))}
         </ul>
-
-        <div className="search-container">
-          <FontAwesomeIcon icon={faSearch} />
-          <input
-            id="search-input"
-            type="text"
-            placeholder="제품검색"
-            onKeyPress={(event) => search(event)}
-          />
-        </div>
       </div>
     </div>
   );
