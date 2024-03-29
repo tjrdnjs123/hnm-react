@@ -59,7 +59,7 @@ const Navbar = ({ setAuthenticate, authenticate }) => {
           className="logo-img"
           onClick={logoClick}
           width={100}
-          src="https://blog.kakaocdn.net/dn/Yt80C/btqDeJAYUBo/JQbTuukRladq2AUOeqgiEK/img.jpg"
+          src="https://1000logos.net/wp-content/uploads/2017/02/HM-symbol.jpg"
           alt=""
         />
       </div>
