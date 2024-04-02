@@ -5,21 +5,31 @@ import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
+import { authenticateAction } from "../redux/actions/authenticateAction";
+import { useDispatch } from "react-redux";
 
-const Navbar = ({ setAuthenticate, authenticate }) => {
+const Navbar = () => {
+  const dispatch = useDispatch();
+  const authenticate = useSelector((state) => state.auth.authenticate);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const goToLoginPage = () => {
     navigate("/login");
   };
   const logOut = () => {
-    setAuthenticate(false);
+    dispatch(authenticateAction.logout())
+    console.log('로그아웃')
+    
   };
   const handleClick = () => {
     if (authenticate) {
+      console.log(authenticate)
+      
       logOut();
     } else {
       goToLoginPage();
+      console.log(authenticate)
     }
   };
   const search = (event) => {

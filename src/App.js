@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import PrivateRoute from "./route/PrivateRoute";
+import { useSelector } from "react-redux";
 
 //1. 전체상품페이지, 로그인 , 상품상세페이지
 //2. 전체상품페이지는 전체 상품을 볼 수 있다.
@@ -21,20 +22,14 @@ import PrivateRoute from "./route/PrivateRoute";
 //9. 상품을 검색할 수 있다
 
 function App() {
-  const [authenticate, setAuthenticate] = useState(false);
-  useEffect(() => {
-    console.log("aaA", authenticate);
-  }, [authenticate]);
+  
   return (
     <div>
-      <Navbar setAuthenticate={setAuthenticate} authenticate={authenticate}/>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<ProductAll />} />
-        <Route
-          path="/login"
-          element={<Login setAuthenticate={setAuthenticate} />}
-        />
-        <Route path="/product/:id" element={<PrivateRoute  authenticate={authenticate}/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/product/:id" element={<PrivateRoute />} />
       </Routes>
     </div>
   );

@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { productAction } from "../redux/actions/productAction";
 
 const ProductDetail = () => {
+  const dispatch = useDispatch();
+  const product = useSelector((state) => state.product.selectedItem);
   let { id } = useParams();
-  const [product, setProduct] = useState("");
-  const getProductDetail = async () => {
-    let url = `https://my-json-server.typicode.com/tjrdnjs123/hnm-react/products/${id}`;
-    let response = await fetch(url);
-    let data = await response.json();
-    console.log(data);
-    setProduct(data);
+  const getProductDetail = () => {
+    dispatch(productAction.getProductDetail(id));
   };
   useEffect(() => {
     getProductDetail();
@@ -20,7 +20,7 @@ const ProductDetail = () => {
     <Container>
       <Row>
         <Col className="product-img-area">
-          <img src={product?.img} className="product-img" alt=""/>
+          <img src={product?.img} className="product-img" alt="" />
         </Col>
         <Col className="product-text-area">
           <div>{product?.title}</div>
@@ -34,7 +34,9 @@ const ProductDetail = () => {
             <option value="medium">M</option>
             <option value="large">L</option>
           </select>
-          <div><button className="add-btn">추가</button></div>
+          <div>
+            <button className="add-btn">추가</button>
+          </div>
         </Col>
       </Row>
     </Container>
